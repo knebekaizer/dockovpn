@@ -1,6 +1,6 @@
 docker build -t dockvpn .
 
-docker run -d -it --rm -v $PWD/client_data:/opt/Dockovpn_data/clients --cap-add=NET_ADMIN -p 1194:1194/udp -e HOST_ADDR=$(curl -s https://api.ipify.org) --name dockvpn dockvpn
+docker run -it --rm -v $PWD/clients:/opt/Dockovpn_data/clients --cap-add=NET_ADMIN -p 1194:1194/udp -e HOST_ADDR=$(curl -s https://api.ipify.org) --name dockvpn dockvpn
 
 docker run -d -it --rm -v $PWD/etc/openvpn:/etc/openvpn  -v $PWD/client_data:/opt/Dockovpn_data/clients --cap-add=NET_ADMIN -p 1194:1194/udp -e HOST_ADDR=$(curl -s https://api.ipify.org) --name dockvpn dockvpn
 
@@ -20,4 +20,5 @@ docker exec dockvpn ./genclient.sh foo
 	    ├── guOFti5yFvRGZVmOP0uTOPeTrTjXWlqS.crt
 	    ├── guOFti5yFvRGZVmOP0uTOPeTrTjXWlqS.key
 	    └── ta.key
+
 
