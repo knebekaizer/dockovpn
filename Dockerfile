@@ -16,6 +16,7 @@ ENV HOST_CONF_PORT 80
 WORKDIR ${APP_INSTALL_PATH}
 
 COPY scripts .
+COPY config/ccd .
 COPY config ./config
 COPY VERSION ./config
 

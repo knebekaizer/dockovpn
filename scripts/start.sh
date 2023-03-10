@@ -77,7 +77,11 @@ if [[ -n $IS_INITIAL ]]; then
     echo " "
 
     # Generate client config
-    ./genclient.sh $@
+    ./genclient.sh
+    ./genclient.sh air
+    ./genclient.sh mm
+    ./genclient.sh Ari
+    ./genclient.sh SynDS
 fi
 
 tail -f /dev/null
